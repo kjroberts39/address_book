@@ -1,8 +1,9 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
-
+  access user: :all
+  
   def index
-    @contacts = Contact.all.order(name: :asc)
+    @contacts = Contact.contacts_by(current_user).order(name: :asc)
   end
 
   def show
@@ -17,7 +18,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-
+    @contact.user_id = current_user.id
     respond_to do |format|
       if @contact.save
         format.html { redirect_to @contact, notice: 'Your new Contact was added.' }

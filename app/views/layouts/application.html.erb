@@ -9,7 +9,13 @@
   </head>
 
   <body>
-  	<%= login_helper %>
-    <%= yield %>
+    <div class="container">
+      <a href="https://bookly.co/">
+        <img src=https://bookly.co/assets/logo-0caae2836350216289b8cef80de904866d07d9736fbf83b7b5e7cc621bf930be.png alt="Logo">
+      </a>
+      <span class="col-md-2">KJ's Address Book</span>
+      <%= login_helper "btn btn-dark" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

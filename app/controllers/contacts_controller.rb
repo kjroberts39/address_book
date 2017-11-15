@@ -21,7 +21,7 @@ class ContactsController < ApplicationController
     @contact.user_id = current_user.id
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Your new Contact was added.' }
+        format.html { redirect_to contacts_path, notice: 'Your new Contact was added.' }
       else
         format.html { render :new }
       end

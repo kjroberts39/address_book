@@ -20,5 +20,8 @@
   <%= @contact.phone %>
 </p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= link_to 'Edit', edit_contact_path(@contact), class: "btn btn-secondary" %>
+	<%= link_to 'Back', contacts_path, class: "btn btn-secondary" %>
+</div>
